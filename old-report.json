@@ -1,0 +1,712 @@
+{
+  "Issues": [
+    {
+      "FromLinter": "errcheck",
+      "Text": "Error return value of `analysis.Run` is not checked",
+      "Severity": "",
+      "SourceLines": [
+        "\t\tanalysis.Run(*preAnalyzeFilePath)"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "main.go",
+        "Offset": 676,
+        "Line": 30,
+        "Column": 15
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "errcheck",
+      "Text": "Error return value of `results.Run` is not checked",
+      "Severity": "",
+      "SourceLines": [
+        "\t\tresults.Run(*preAnalyzeFilePath, *postAnalyzeFilePath)"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "main.go",
+        "Offset": 787,
+        "Line": 35,
+        "Column": 14
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "gocritic",
+      "Text": "rangeValCopy: each iteration copies 144 bytes (consider pointers or indexing)",
+      "Severity": "",
+      "SourceLines": [
+        "\tfor _, issue := range curRep.Issues {"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 447,
+        "Line": 29,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "gocritic",
+      "Text": "rangeValCopy: each iteration copies 144 bytes (consider pointers or indexing)",
+      "Severity": "",
+      "SourceLines": [
+        "\tfor _, issue := range report.Issues {"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "results/results.go",
+        "Offset": 1350,
+        "Line": 68,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "gofmt",
+      "Text": "File is not `gofmt`-ed with `-s`",
+      "Severity": "",
+      "SourceLines": [
+        "\tfor linter, _ := range lintersToAnalize {"
+      ],
+      "Replacement": {
+        "NeedOnlyDelete": false,
+        "NewLines": [
+          "\tfor linter := range lintersToAnalize {"
+        ],
+        "Inline": null
+      },
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 0,
+        "Line": 87,
+        "Column": 0
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "gofumpt",
+      "Text": "File is not `gofumpt`-ed",
+      "Severity": "",
+      "SourceLines": [
+        ""
+      ],
+      "Replacement": {
+        "NeedOnlyDelete": true,
+        "NewLines": null,
+        "Inline": null
+      },
+      "Pos": {
+        "Filename": "main.go",
+        "Offset": 0,
+        "Line": 6,
+        "Column": 0
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "revive",
+      "Text": "blank-imports: a blank import should be only in a main or test package, or have a comment justifying it",
+      "Severity": "warning",
+      "SourceLines": [
+        "\t_ \"embed\""
+      ],
+      "Replacement": null,
+      "LineRange": {
+        "From": 4,
+        "To": 4
+      },
+      "Pos": {
+        "Filename": "results/results.go",
+        "Offset": 27,
+        "Line": 4,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "revive",
+      "Text": "blank-imports: a blank import should be only in a main or test package, or have a comment justifying it",
+      "Severity": "warning",
+      "SourceLines": [
+        "\t_ \"embed\""
+      ],
+      "Replacement": null,
+      "LineRange": {
+        "From": 4,
+        "To": 4
+      },
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 28,
+        "Line": 4,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "unused",
+      "Text": "var `out` is unused",
+      "Severity": "",
+      "SourceLines": [
+        "var out = map[reportName]report{}"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 94,
+        "Line": 12,
+        "Column": 5
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "wsl",
+      "Text": "return statements should not be cuddled if block has more than two lines",
+      "Severity": "",
+      "SourceLines": [
+        "\t\treturn"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 2218,
+        "Line": 103,
+        "Column": 3
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "wsl",
+      "Text": "only one cuddle assignment allowed before range statement",
+      "Severity": "",
+      "SourceLines": [
+        "\t\tfor _, file := range linterState.Files {"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 2526,
+        "Line": 116,
+        "Column": 3
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "wsl",
+      "Text": "only one cuddle assignment allowed before if statement",
+      "Severity": "",
+      "SourceLines": [
+        "\t\t\tif !gotExistingCat {"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "results/results.go",
+        "Offset": 1674,
+        "Line": 82,
+        "Column": 4
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "wsl",
+      "Text": "assignments should only be cuddled with other assignments",
+      "Severity": "",
+      "SourceLines": [
+        "\t\t\tout[cat] = existingCat + 1"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "results/results.go",
+        "Offset": 1733,
+        "Line": 86,
+        "Column": 4
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "wsl",
+      "Text": "return statements should not be cuddled if block has more than two lines",
+      "Severity": "",
+      "SourceLines": [
+        "\t\treturn"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "main.go",
+        "Offset": 484,
+        "Line": 22,
+        "Column": 3
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "musttag",
+      "Text": "`report` should be annotated with the `json` tag as it is passed to `json.Marshal` at analysis/analysis.go:133:13",
+      "Severity": "",
+      "SourceLines": [
+        "type report struct {"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 1312,
+        "Line": 68,
+        "Column": 6
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "varnamelen",
+      "Text": "variable name 'mm' is too short for the scope of its usage",
+      "Severity": "",
+      "SourceLines": [
+        "\tmm, err := json.Marshal(\u0026tf)"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 2913,
+        "Line": 133,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    },
+    {
+      "FromLinter": "varnamelen",
+      "Text": "variable name 'fo' is too short for the scope of its usage",
+      "Severity": "",
+      "SourceLines": [
+        "\tfo, err := os.Create(fmt.Sprintf(\"./pitch/lint-result-%s-%d.json\", name, time.Now().Unix()))"
+      ],
+      "Replacement": null,
+      "Pos": {
+        "Filename": "analysis/analysis.go",
+        "Offset": 3012,
+        "Line": 138,
+        "Column": 2
+      },
+      "ExpectNoLint": false,
+      "ExpectedNoLintLinter": ""
+    }
+  ],
+  "Report": {
+    "Linters": [
+      {
+        "Name": "asasalint",
+        "Enabled": true
+      },
+      {
+        "Name": "asciicheck",
+        "Enabled": true
+      },
+      {
+        "Name": "bidichk",
+        "Enabled": true
+      },
+      {
+        "Name": "bodyclose",
+        "Enabled": true
+      },
+      {
+        "Name": "containedctx",
+        "Enabled": true
+      },
+      {
+        "Name": "contextcheck",
+        "Enabled": true
+      },
+      {
+        "Name": "cyclop"
+      },
+      {
+        "Name": "decorder"
+      },
+      {
+        "Name": "deadcode"
+      },
+      {
+        "Name": "depguard"
+      },
+      {
+        "Name": "dogsled",
+        "Enabled": true
+      },
+      {
+        "Name": "dupl",
+        "Enabled": true
+      },
+      {
+        "Name": "dupword",
+        "Enabled": true
+      },
+      {
+        "Name": "durationcheck",
+        "Enabled": true
+      },
+      {
+        "Name": "errcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "errchkjson",
+        "Enabled": true
+      },
+      {
+        "Name": "errname",
+        "Enabled": true
+      },
+      {
+        "Name": "errorlint",
+        "Enabled": true
+      },
+      {
+        "Name": "execinquery"
+      },
+      {
+        "Name": "exhaustive",
+        "Enabled": true
+      },
+      {
+        "Name": "exhaustivestruct"
+      },
+      {
+        "Name": "exhaustruct"
+      },
+      {
+        "Name": "exportloopref",
+        "Enabled": true
+      },
+      {
+        "Name": "forbidigo"
+      },
+      {
+        "Name": "forcetypeassert",
+        "Enabled": true
+      },
+      {
+        "Name": "funlen",
+        "Enabled": true
+      },
+      {
+        "Name": "gci",
+        "Enabled": true
+      },
+      {
+        "Name": "ginkgolinter"
+      },
+      {
+        "Name": "gocheckcompilerdirectives",
+        "Enabled": true
+      },
+      {
+        "Name": "gochecknoglobals"
+      },
+      {
+        "Name": "gochecknoinits",
+        "Enabled": true
+      },
+      {
+        "Name": "gocognit",
+        "Enabled": true
+      },
+      {
+        "Name": "goconst",
+        "Enabled": true
+      },
+      {
+        "Name": "gocritic",
+        "Enabled": true
+      },
+      {
+        "Name": "gocyclo",
+        "Enabled": true
+      },
+      {
+        "Name": "godot"
+      },
+      {
+        "Name": "godox",
+        "Enabled": true
+      },
+      {
+        "Name": "goerr113",
+        "Enabled": true
+      },
+      {
+        "Name": "gofmt",
+        "Enabled": true
+      },
+      {
+        "Name": "gofumpt",
+        "Enabled": true
+      },
+      {
+        "Name": "goheader"
+      },
+      {
+        "Name": "goimports",
+        "Enabled": true
+      },
+      {
+        "Name": "golint"
+      },
+      {
+        "Name": "gomnd",
+        "Enabled": true
+      },
+      {
+        "Name": "gomoddirectives"
+      },
+      {
+        "Name": "gomodguard"
+      },
+      {
+        "Name": "goprintffuncname",
+        "Enabled": true
+      },
+      {
+        "Name": "gosec",
+        "Enabled": true
+      },
+      {
+        "Name": "gosimple",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "gosmopolitan"
+      },
+      {
+        "Name": "govet",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "grouper"
+      },
+      {
+        "Name": "ifshort"
+      },
+      {
+        "Name": "importas"
+      },
+      {
+        "Name": "ineffassign",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "interfacebloat",
+        "Enabled": true
+      },
+      {
+        "Name": "interfacer"
+      },
+      {
+        "Name": "ireturn"
+      },
+      {
+        "Name": "lll",
+        "Enabled": true
+      },
+      {
+        "Name": "loggercheck"
+      },
+      {
+        "Name": "maintidx"
+      },
+      {
+        "Name": "makezero",
+        "Enabled": true
+      },
+      {
+        "Name": "maligned"
+      },
+      {
+        "Name": "mirror"
+      },
+      {
+        "Name": "misspell",
+        "Enabled": true
+      },
+      {
+        "Name": "musttag",
+        "Enabled": true
+      },
+      {
+        "Name": "nakedret",
+        "Enabled": true
+      },
+      {
+        "Name": "nestif",
+        "Enabled": true
+      },
+      {
+        "Name": "nilerr",
+        "Enabled": true
+      },
+      {
+        "Name": "nilnil",
+        "Enabled": true
+      },
+      {
+        "Name": "nlreturn"
+      },
+      {
+        "Name": "noctx",
+        "Enabled": true
+      },
+      {
+        "Name": "nonamedreturns",
+        "Enabled": true
+      },
+      {
+        "Name": "nosnakecase"
+      },
+      {
+        "Name": "nosprintfhostport"
+      },
+      {
+        "Name": "paralleltest"
+      },
+      {
+        "Name": "prealloc",
+        "Enabled": true
+      },
+      {
+        "Name": "predeclared",
+        "Enabled": true
+      },
+      {
+        "Name": "promlinter"
+      },
+      {
+        "Name": "reassign",
+        "Enabled": true
+      },
+      {
+        "Name": "revive",
+        "Enabled": true
+      },
+      {
+        "Name": "rowserrcheck",
+        "Enabled": true
+      },
+      {
+        "Name": "scopelint"
+      },
+      {
+        "Name": "sqlclosecheck",
+        "Enabled": true
+      },
+      {
+        "Name": "staticcheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "structcheck"
+      },
+      {
+        "Name": "stylecheck",
+        "Enabled": true
+      },
+      {
+        "Name": "tagalign"
+      },
+      {
+        "Name": "tagliatelle"
+      },
+      {
+        "Name": "tenv",
+        "Enabled": true
+      },
+      {
+        "Name": "testableexamples"
+      },
+      {
+        "Name": "testpackage"
+      },
+      {
+        "Name": "thelper",
+        "Enabled": true
+      },
+      {
+        "Name": "tparallel",
+        "Enabled": true
+      },
+      {
+        "Name": "typecheck",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "unconvert",
+        "Enabled": true
+      },
+      {
+        "Name": "unparam",
+        "Enabled": true
+      },
+      {
+        "Name": "unused",
+        "Enabled": true,
+        "EnabledByDefault": true
+      },
+      {
+        "Name": "usestdlibvars",
+        "Enabled": true
+      },
+      {
+        "Name": "varcheck"
+      },
+      {
+        "Name": "varnamelen",
+        "Enabled": true
+      },
+      {
+        "Name": "wastedassign",
+        "Enabled": true
+      },
+      {
+        "Name": "whitespace",
+        "Enabled": true
+      },
+      {
+        "Name": "wrapcheck",
+        "Enabled": true
+      },
+      {
+        "Name": "wsl",
+        "Enabled": true
+      },
+      {
+        "Name": "zerologlint"
+      },
+      {
+        "Name": "nolintlint",
+        "Enabled": true
+      }
+    ]
+  }
+}
